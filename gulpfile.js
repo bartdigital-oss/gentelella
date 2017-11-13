@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create();
 
@@ -23,7 +23,8 @@ gulp.task('scripts', function() {
 
 // TODO: Maybe we can simplify how sass compile the minify and unminify version
 var compileSASS = function (filename, options) {
-  return sass('src/scss/gentelella.scss', options)
+    return gulp.src('src/scss/gentelella.scss')
+        .pipe(sass(options).on('error', sass.logError))
         .pipe(autoprefixer('last 2 versions', '> 5%'))
         .pipe(concat(filename))
         .pipe(gulp.dest(DEST+'/css'))
