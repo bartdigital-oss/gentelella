@@ -3,6 +3,5 @@ npm-debug.log
 node_modules
 .sass-cache
 .idea
-
-build/*.html
+build/**/*.html
 npm-debug.log.*
