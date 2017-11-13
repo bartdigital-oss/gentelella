@@ -1,0 +1,28 @@
+@mixin create-color($name, $color, $contrastColor: null){
+  .#{$name}{
+    color: $color;
+  }
+
+  .border-#{$name} {
+    border-color: $color !important;
+  }
+
+  .bg-#{$name} {
+    background: $color !important;
+    border: 1px solid $color !important;
+
+    @if ($contrastColor) {
+      color: $contrastColor;
+    }
+  }
+}
+
+@include create-color("blue", $color-blue, $color-white);
+@include create-color("purple", $color-purple, $color-white);
+@include create-color("green", $color-green, $color-white);
+@include create-color("aero", $color-aero);
+@include create-color("red", $color-red, $color-white);
+@include create-color("dark", $color-dark);
+@include create-color("white", $color-white, $color-gray);
+@include create-color("orange", $color-orange);
+@include create-color("blue-sky", $color-blue-sky, $color-white);

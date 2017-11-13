@@ -1,0 +1,49 @@
+.left_col {
+  background: $color-primary;
+}
+
+.nav-sm .container.body .col-md-3.left_col {
+  min-height: 100%;
+  width: 70px;
+  padding: 0;
+  z-index: 9999;
+  position: absolute;
+}
+
+.nav-sm .container.body .col-md-3.left_col.menu_fixed {
+  position: fixed;
+  height: 100%;
+}
+
+.nav-sm .container.body .col-md-3.left_col .mCSB_container,
+.nav-sm .container.body .col-md-3.left_col .mCustomScrollBox {
+  overflow: visible;
+}
+
+.nav-md .container.body .col-md-3.left_col {
+  min-height: 100%;
+  width: 230px;
+  padding: 0;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+}
+
+.nav-md .container.body .col-md-3.left_col.menu_fixed {
+  height: 100%;
+  position: fixed;
+}
+
+@media (max-width: 991px) {
+  .nav-md .container.body .col-md-3.left_col {
+    display: none;
+  }
+}
+
+.left_col .mCSB_scrollTools {
+  width: 6px;
+}
+
+.left_col .mCSB_dragger {
+  max-height: 400px !important;
+}
