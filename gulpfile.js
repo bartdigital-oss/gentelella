@@ -25,7 +25,7 @@ gulp.task('scripts', function() {
 
 // TODO: Maybe we can simplify how sass compile the minify and unminify version
 var compileSASS = function (filename, options) {
-    return gulp.src('src/scss/gentelella.scss')
+    return gulp.src('src/scss/custom.scss')
         .pipe(sass(options).on('error', sass.logError))
         .pipe(autoprefixer('last 2 versions', '> 5%'))
         .pipe(concat(filename))
