@@ -23,7 +23,7 @@ gulp.task('scripts', function() {
 
 // TODO: Maybe we can simplify how sass compile the minify and unminify version
 var compileSASS = function (filename, options) {
-  return sass('src/scss/*.scss', options)
+  return sass('src/scss/gentelella.scss', options)
         .pipe(autoprefixer('last 2 versions', '> 5%'))
         .pipe(concat(filename))
         .pipe(gulp.dest(DEST+'/css'))
@@ -31,7 +31,7 @@ var compileSASS = function (filename, options) {
 };
 
 gulp.task('sass', function() {
-    return compileSASS('custom.css', {});
+    return compileSASS('custom.css', { verbose: true });
 });
 
 gulp.task('sass-minify', function() {
