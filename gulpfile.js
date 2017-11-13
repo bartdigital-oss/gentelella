@@ -42,7 +42,7 @@ gulp.task('sass-minify', function() {
 });
 
 gulp.task('ejs', function() {
-    gulp.src('./production/**/*.ejs')
+    gulp.src('./production/*.ejs')
         .pipe(ejs({}, {}, {ext: '.html'}).on('error', util.log))
         .pipe(gulp.dest(DEST))
 });
